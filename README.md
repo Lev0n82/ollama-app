@@ -13,11 +13,11 @@ A modern and easy-to-use client for Ollama. Have the greatest experience while k
 
 ### Android (this fork)
 
-[![Download APK](https://img.shields.io/badge/Download-ollama--android--v1.2.0.apk-3DDC84?logo=android&logoColor=white)](https://github.com/Lev0n82/ollama-app/releases/download/v1.2.0/ollama-android-v1.2.0.apk)
+[![Download APK](https://img.shields.io/badge/Download-ollama--android--v1.2.1.apk-3DDC84?logo=android&logoColor=white)](https://github.com/Lev0n82/ollama-app/releases/download/v1.2.1/ollama-android-v1.2.1.apk)
 
-Direct link: [`ollama-android-v1.2.0.apk`](https://github.com/Lev0n82/ollama-app/releases/download/v1.2.0/ollama-android-v1.2.0.apk) · [All releases & release notes](https://github.com/Lev0n82/ollama-app/releases)
+Direct link: [`ollama-android-v1.2.1.apk`](https://github.com/Lev0n82/ollama-app/releases/download/v1.2.1/ollama-android-v1.2.1.apk) · [All releases & release notes](https://github.com/Lev0n82/ollama-app/releases)
 
-Includes Ollama Cloud support, 13 languages/locales, and full accessibility (WCAG 2.2 / AODA) features — see the [release notes](https://github.com/Lev0n82/ollama-app/releases/tag/v1.2.0).
+Includes Ollama Cloud support, 13 languages/locales, and full accessibility (WCAG 2.2 / AODA) features — see the [release notes](https://github.com/Lev0n82/ollama-app/releases/tag/v1.2.1).
 
 > Sideload it: allow "install unknown apps" for your browser/file manager when prompted.
 
