@@ -201,6 +201,41 @@ class _AppState extends State<App> {
   }
 }
 
+/// Localized strings for the chat package. flutter_chat_ui ships
+/// subclasses for the languages it supports natively; for every other
+/// language of this app (e.g. French, Italian, Armenian) the English
+/// class is used as a fallback, but the fields the app itself provides
+/// translations for are still filled in from AppLocalizations.
+ChatL10n chatL10nFor(BuildContext context) {
+  final l10n = AppLocalizations.of(context)!;
+  final locale = Localizations.localeOf(context);
+  switch (locale.languageCode) {
+    case "de":
+      return const ChatL10nDe();
+    case "es":
+      return const ChatL10nEs();
+    case "fa":
+      return const ChatL10nFa();
+    case "pt":
+      return const ChatL10nPt();
+    case "ru":
+      return const ChatL10nRu();
+    case "tr":
+      return const ChatL10nTr();
+    case "zh":
+      return (locale.countryCode == "TW" ||
+              locale.countryCode == "HK" ||
+              locale.countryCode == "MO")
+          ? const ChatL10nZhTW()
+          : const ChatL10nZhCN();
+    default:
+      return ChatL10nEn(
+          inputPlaceholder: l10n.messageInputPlaceholder,
+          attachmentButtonAccessibilityLabel: l10n.tooltipAttachment,
+          sendButtonAccessibilityLabel: l10n.tooltipSend);
+  }
+}
+
 class MainApp extends StatefulWidget {
   const MainApp({super.key});
 
@@ -223,7 +258,8 @@ class _MainAppState extends State<MainApp> {
           ? const SizedBox.shrink()
           : (Padding(
               padding: padding,
-              child: InkWell(
+              child: ExcludeSemantics(
+                  child: InkWell(
                   enableFeedback: false,
                   customBorder: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -252,8 +288,9 @@ class _MainAppState extends State<MainApp> {
                             child: AnimatedScale(
                                 scale: sidebarIconSize,
                                 duration: const Duration(milliseconds: 400),
-                                child: const ImageIcon(
-                                    AssetImage("assets/logo512.png")))),
+                                child: ImageIcon(AssetImage("assets/logo512.png"),
+                                    semanticLabel: AppLocalizations.of(context)!
+                                        .accessibilityAppLogo))),
                         Expanded(
                           child: Text(AppLocalizations.of(context)!.appTitle,
                               softWrap: false,
@@ -262,7 +299,7 @@ class _MainAppState extends State<MainApp> {
                                   const TextStyle(fontWeight: FontWeight.w500)),
                         ),
                         const SizedBox(width: 16),
-                      ]))))),
+                      ])))))),
       (desktopLayoutNotRequired(context) ||
               (!allowMultipleChats && !allowSettings))
           ? const SizedBox.shrink()
@@ -273,7 +310,8 @@ class _MainAppState extends State<MainApp> {
       (allowMultipleChats)
           ? (Padding(
               padding: padding,
-              child: InkWell(
+              child: MergeSemantics(
+                  child: InkWell(
                   enableFeedback: false,
                   customBorder: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -302,12 +340,13 @@ class _MainAppState extends State<MainApp> {
                                   const TextStyle(fontWeight: FontWeight.w500)),
                         ),
                         const SizedBox(width: 16),
-                      ])))))
+                      ]))))))
           : const SizedBox.shrink(),
       (allowSettings)
           ? (Padding(
               padding: padding,
-              child: InkWell(
+              child: MergeSemantics(
+                  child: InkWell(
                   enableFeedback: false,
                   customBorder: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -345,13 +384,14 @@ class _MainAppState extends State<MainApp> {
                                   const TextStyle(fontWeight: FontWeight.w500)),
                         ),
                         const SizedBox(width: 16),
-                      ])))))
+                      ]))))))
           : const SizedBox.shrink(),
       (pwa.PWAInstall().installPromptEnabled &&
               pwa.PWAInstall().launchMode == pwa.LaunchMode.browser)
           ? (Padding(
               padding: padding,
-              child: InkWell(
+              child: MergeSemantics(
+                  child: InkWell(
                   enableFeedback: false,
                   customBorder: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -386,7 +426,7 @@ class _MainAppState extends State<MainApp> {
                                   const TextStyle(fontWeight: FontWeight.w500)),
                         ),
                         const SizedBox(width: 16),
-                      ])))))
+                      ]))))))
           : const SizedBox.shrink(),
       (desktopLayoutNotRequired(context) &&
               (!allowMultipleChats && !allowSettings))
@@ -399,7 +439,8 @@ class _MainAppState extends State<MainApp> {
           ? const SizedBox.shrink()
           : (Padding(
               padding: padding,
-              child: InkWell(
+              child: MergeSemantics(
+                  child: InkWell(
                   enableFeedback: false,
                   customBorder: const RoundedRectangleBorder(
                       borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -409,21 +450,21 @@ class _MainAppState extends State<MainApp> {
                   child: Padding(
                       padding: const EdgeInsets.only(top: 16, bottom: 16),
                       child: Row(children: [
-                        const Padding(
-                            padding: EdgeInsets.only(left: 16, right: 12),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 16, right: 12),
                             child: Icon(Icons.question_mark_rounded,
-                                color: Colors.grey)),
+                                color: accessibleMuted(context))),
                         Expanded(
                           child: Text(
                               AppLocalizations.of(context)!.optionNoChatFound,
                               softWrap: false,
                               overflow: TextOverflow.fade,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey)),
+                                  color: accessibleMuted(context))),
                         ),
                         const SizedBox(width: 16),
-                      ]))))),
+                      ])))))),
       Builder(builder: (context) {
         String tip = (tipId == 0)
             ? AppLocalizations.of(context)!.tip0
@@ -456,19 +497,19 @@ class _MainAppState extends State<MainApp> {
                   child: Padding(
                       padding: const EdgeInsets.only(top: 16, bottom: 16),
                       child: Row(children: [
-                        const Padding(
-                            padding: EdgeInsets.only(left: 16, right: 12),
+                        Padding(
+                            padding: const EdgeInsets.only(left: 16, right: 12),
                             child: Icon(Icons.tips_and_updates_rounded,
-                                color: Colors.grey)),
+                                color: accessibleMuted(context))),
                         Expanded(
                           child: Text(
                               AppLocalizations.of(context)!.tipPrefix + tip,
                               softWrap: true,
                               maxLines: 3,
                               overflow: TextOverflow.fade,
-                              style: const TextStyle(
+                              style: TextStyle(
                                   fontWeight: FontWeight.w500,
-                                  color: Colors.grey)),
+                                  color: accessibleMuted(context))),
                         ),
                         const SizedBox(width: 16),
                       ])),
@@ -478,7 +519,8 @@ class _MainAppState extends State<MainApp> {
       ..addAll((prefs?.getStringList("chats") ?? []).map((item) {
         var child = Padding(
             padding: padding,
-            child: InkWell(
+            child: MergeSemantics(
+                child: InkWell(
                 enableFeedback: false,
                 customBorder: const RoundedRectangleBorder(
                     borderRadius: BorderRadius.all(Radius.circular(50))),
@@ -720,7 +762,8 @@ class _MainAppState extends State<MainApp> {
                                         ),
                                       ))
                                   : const SizedBox(width: 16)),
-                    ]))));
+                    ])))));
+
         return (desktopFeature() ||
                     (kIsWeb && desktopLayoutNotRequired(context))) ||
                 !allowMultipleChats
@@ -799,8 +842,8 @@ class _MainAppState extends State<MainApp> {
                             // ignore: prefer_const_constructors
                             child: Text(
                                 "*Build Error:*\n\nuseHost: $useHost\nallowSettings: $allowSettings\n\nYou created this build? One of them must be set to true or the app is not functional!\n\nYou received this build by someone else? Please contact them and report the issue.",
-                                style: const TextStyle(
-                                    color: Colors.red,
+                                style: TextStyle(
+                                    color: Colors.red.shade300,
                                     fontFamily: "monospace")))));
               });
         }
@@ -963,6 +1006,8 @@ class _MainAppState extends State<MainApp> {
                 allowMultipleChats
                     ? IconButton(
                         enableFeedback: false,
+                        tooltip:
+                            AppLocalizations.of(context)!.tooltipResetChat,
                         onPressed: () {
                           selectionHaptic();
                           if (!chatAllowed) return;
@@ -1176,7 +1221,8 @@ class _MainAppState extends State<MainApp> {
                                                   ? MarkdownStyleSheet(
                                                       p: TextStyle(
                                                           color: greyed
-                                                              ? Colors.grey
+                                                              ? accessibleMuted(
+                                                                  context)
                                                               : Colors.black,
                                                           fontSize: 16,
                                                           fontWeight:
@@ -1231,9 +1277,12 @@ class _MainAppState extends State<MainApp> {
                                           opacity: logoVisible ? 1.0 : 0.0,
                                           duration:
                                               const Duration(milliseconds: 500),
-                                          child: const ImageIcon(
+                                          child: ImageIcon(
                                               AssetImage("assets/logo512.png"),
-                                              size: 44)))),
+                                              size: 44,
+                                              semanticLabel:
+                                                  AppLocalizations.of(context)!
+                                                      .accessibilityAppLogo)))),
                               onSendPressed: (p0) {
                                 send(p0.text, context, setState);
                               },
@@ -1550,15 +1599,7 @@ class _MainAppState extends State<MainApp> {
                                                     ]));
                                           });
                                     },
-                              l10n: ChatL10nEn(
-                                  inputPlaceholder: AppLocalizations.of(context)!
-                                      .messageInputPlaceholder,
-                                  attachmentButtonAccessibilityLabel:
-                                      AppLocalizations.of(context)!
-                                          .tooltipAttachment,
-                                  sendButtonAccessibilityLabel:
-                                      AppLocalizations.of(context)!
-                                          .tooltipSend),
+                              l10n: chatL10nFor(context),
                               inputOptions: InputOptions(
                                   keyboardType: TextInputType.multiline,
                                   onTextChanged: (p0) {

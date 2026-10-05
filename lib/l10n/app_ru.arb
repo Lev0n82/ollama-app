@@ -1,0 +1,484 @@
+{
+  "@@locale": "ru",
+  "appTitle": "Ollama",
+  "optionNewChat": "Новый чат",
+  "optionSettings": "Настройки",
+  "optionInstallPwa": "Установить веб-приложение",
+  "optionNoChatFound": "Чаты не найдены",
+  "tipPrefix": "Совет: ",
+  "tip0": "Редактируйте сообщения долгим нажатием на них",
+  "tip1": "Удаляйте сообщения двойным нажатием на них",
+  "tip2": "Тему можно изменить в настройках",
+  "tip3": "Выберите мультимодальную модель, чтобы отправлять изображения",
+  "tip4": "Чаты сохраняются автоматически",
+  "deleteChat": "Удалить",
+  "renameChat": "Переименовать",
+  "takeImage": "Сделать снимок",
+  "uploadImage": "Загрузить изображение",
+  "notAValidImage": "Некорректное изображение",
+  "imageOnlyConversation": "Разговор только с изображениями",
+  "messageInputPlaceholder": "Сообщение",
+  "tooltipAttachment": "Добавить вложение",
+  "tooltipSend": "Отправить",
+  "tooltipSave": "Сохранить",
+  "tooltipLetAIThink": "Пусть ИИ подумает",
+  "tooltipAddHostHeaders": "Добавить заголовки хоста",
+  "tooltipReset": "Сбросить текущий чат",
+  "tooltipOptions": "Показать параметры",
+  "noModelSelected": "Модель не выбрана",
+  "noHostSelected": "Хост не выбран, откройте настройки, чтобы задать его",
+  "noSelectedModel": "<селектор>",
+  "newChatTitle": "Безымянный чат",
+  "modelDialogAddModel": "Добавить",
+  "modelDialogAddPromptTitle": "Добавить новую модель",
+  "modelDialogAddPromptDescription": "Это может быть обычное имя (например, 'llama3') или имя с тегом (например, 'llama3:70b').",
+  "modelDialogAddPromptAlreadyExists": "Модель уже существует",
+  "modelDialogAddPromptInvalid": "Некорректное имя модели",
+  "modelDialogAddAllowanceTitle": "Разрешить прокси",
+  "modelDialogAddAllowanceDescription": "Приложению Ollama App необходимо проверить, что введённая модель существует. Обычно для этого мы отправляем веб-запрос к списку моделей Ollama и проверяем код ответа, но, поскольку вы используете веб-клиент, сделать это напрямую нельзя. Вместо этого приложение отправит запрос к другому API, размещённому JHubi1, чтобы проверить это за нас.\nЭто разовый запрос, и он будет отправлен только при добавлении новой модели.\nВместе с запросом будет отправлен ваш IP-адрес, который может храниться до десяти минут для защиты от спама с потенциально вредоносными целями.\nЕсли вы согласны, ваш выбор будет запомнен на будущее; если нет, ничего не будет отправлено, и модель не будет добавлена.",
+  "modelDialogAddAllowanceAllow": "Разрешить",
+  "modelDialogAddAllowanceDeny": "Отклонить",
+  "modelDialogAddAssuranceTitle": "Добавить {model}?",
+  "modelDialogAddAssuranceDescription": "Нажав «Добавить», вы скачаете модель '{model}' напрямую с сервера Ollama на ваш хост.\nЭто может занять время в зависимости от вашего интернет-соединения. Действие нельзя отменить.\nЕсли приложение будет закрыто во время загрузки, она продолжится, когда вы снова введёте имя в диалоге моделей.",
+  "modelDialogAddAssuranceAdd": "Добавить",
+  "modelDialogAddAssuranceCancel": "Отмена",
+  "modelDialogAddDownloadPercentLoading": "загрузка прогресса",
+  "modelDialogAddDownloadPercent": "загрузка на {percent}%",
+  "modelDialogAddDownloadFailed": "Соединение потеряно, попробуйте снова",
+  "modelDialogAddDownloadSuccess": "Загрузка успешно завершена",
+  "deleteDialogTitle": "Удалить чат",
+  "deleteDialogDescription": "Вы уверены, что хотите продолжить? Это сотрёт всю память об этом чате, и действие нельзя будет отменить.\nЧтобы отключить этот диалог, зайдите в настройки.",
+  "deleteDialogDelete": "Удалить",
+  "deleteDialogCancel": "Отмена",
+  "dialogEnterNewTitle": "Введите новый заголовок",
+  "dialogEditMessageTitle": "Редактировать сообщение",
+  "settingsTitleBehavior": "Поведение",
+  "settingsDescriptionBehavior": "Настройте поведение ИИ по своему вкусу.",
+  "settingsTitleInterface": "Интерфейс",
+  "settingsDescriptionInterface": "Настройте внешний вид и поведение Ollama App.",
+  "settingsTitleVoice": "Голос",
+  "settingsDescriptionVoice": "Включите голосовой режим и настройте параметры голоса.",
+  "settingsTitleExport": "Экспорт",
+  "settingsDescriptionExport": "Экспортируйте и импортируйте историю чатов.",
+  "settingsTitleAbout": "О программе",
+  "settingsDescriptionAbout": "Проверяйте наличие обновлений и узнавайте больше о Ollama App.",
+  "settingsSavedAutomatically": "Настройки сохраняются автоматически",
+  "settingsExperimentalAlpha": "альфа",
+  "settingsExperimentalAlphaDescription": "Эта функция находится на стадии альфы и может работать не так, как задумано или ожидается.\nКритические проблемы и/или необратимый серьёзный ущерб устройству и/или используемым сервисам нельзя исключать.\nИспользуйте на свой страх и риск. Автор приложения ответственности не несёт.",
+  "settingsExperimentalAlphaFeature": "Альфа-функция, удерживайте, чтобы узнать больше",
+  "settingsExperimentalBeta": "бета",
+  "settingsExperimentalBetaDescription": "Эта функция находится на стадии беты и может работать не так, как задумано или ожидается.\nМенее серьёзные проблемы могут возникать, а могут и нет. Ущерб не должен быть критическим.\nИспользуйте на свой страх и риск.",
+  "settingsExperimentalBetaFeature": "Бета-функция, удерживайте, чтобы узнать больше",
+  "settingsExperimentalDeprecated": "устарело",
+  "settingsExperimentalDeprecatedDescription": "Эта функция устарела и будет удалена в будущей версии.\nОна может работать не так, как задумано или ожидается. Используйте на свой страх и риск.",
+  "settingsExperimentalDeprecatedFeature": "Устаревшая функция, удерживайте, чтобы узнать больше",
+  "settingsHost": "Хост",
+  "settingsHostValid": "Хост действителен",
+  "settingsHostChecking": "Проверка хоста",
+  "settingsHostInvalid": "Проблема: {type, select, url{Некорректный URL} host{Некорректный хост} auth{Ошибка аутентификации} timeout{Запрос не удался. Проблемы на сервере} ratelimit{Слишком много запросов} other{Запрос не удался}}",
+  "settingsHostHeaderTitle": "Задать заголовок хоста",
+  "settingsHostHeaderInvalid": "Введённый текст не является корректным JSON-объектом заголовков",
+  "settingsHostInvalidDetailed": "{type, select, url{Введённый URL недействителен. Используйте полный URL, начинающийся с http:// или https:// — например, http://localhost:11434 для локального сервера Ollama или https://ollama.com для Ollama Cloud. Не добавляйте завершающий слэш или путь /api.} host{Введённый хост недействителен. Он недоступен. Проверьте хост и попробуйте снова.} auth{Сервер отклонил запрос (401/403). Если вы подключаетесь к Ollama Cloud (https://ollama.com), введите ваш API-ключ в поле токена ниже — его можно создать или скопировать на https://ollama.com/keys — и сохраните его. Если вы используете собственный сервер, проверьте заголовок Authorization, настроенный для этого хоста.} other{Введённый хост недействителен. Он недоступен. Проверьте хост и попробуйте снова.}}",
+  "settingsApiTokenInvalid": "API-токен отклонён",
+  "settingsApiTokenInvalidDetailed": "API-токен отклонён сервером (401/403). Убедитесь, что он скопирован в точности так, как показано на https://ollama.com/keys — на этой странице можно создать новый ключ — и сохраните его снова. Токен должен быть задан, пока хост — https://ollama.com.",
+  "settingsApiTokenVerified": "API-токен сохранён и проверен",
+  "settingsApiToken": "API-токен Ollama Cloud",
+  "settingsApiTokenHint": "Вставьте токен с ollama.com",
+  "tooltipShowToken": "Показать токен",
+  "tooltipHideToken": "Скрыть токен",
+  "voiceLanguageInstruction": "Вы должны писать на следующем языке: {language}!",
+  "settingsSystemMessage": "Системное сообщение",
+  "settingsUseSystem": "Использовать системное сообщение",
+  "settingsUseSystemDescription": "Отключает установку системного сообщения выше и использует вместо него сообщение модели. Может быть полезно для моделей с файлами моделей",
+  "settingsDisableMarkdown": "Отключить Markdown",
+  "settingsBehaviorNotUpdatedForOlderChats": "Настройки поведения не обновляются для старых чатов",
+  "settingsShowModelTags": "Показывать теги моделей",
+  "settingsPreloadModels": "Предзагрузка моделей",
+  "settingsResetOnModelChange": "Сброс при смене модели",
+  "settingsRequestTypeStream": "Поток",
+  "settingsRequestTypeRequest": "Запрос",
+  "settingsGenerateTitles": "Генерировать названия",
+  "settingsEnableEditing": "Редактирование сообщений",
+  "settingsAskBeforeDelete": "Спрашивать перед удалением чата",
+  "settingsShowTips": "Показывать советы в боковой панели",
+  "settingsKeepModelLoadedAlways": "Всегда держать модель загруженной",
+  "settingsKeepModelLoadedNever": "Не держать модель загруженной",
+  "settingsKeepModelLoadedFor": "Задать время удержания модели загруженной",
+  "settingsKeepModelLoadedSet": "Держать модель загруженной {minutes} мин.",
+  "settingsTimeoutMultiplier": "Множитель тайм-аута",
+  "settingsTimeoutMultiplierDescription": "Выберите множитель, который применяется к каждому значению тайм-аута в приложении. Может быть полезно при медленном интернет-соединении или медленном хосте.",
+  "settingsTimeoutMultiplierExample": "Например, тайм-аут сообщения:",
+  "settingsEnableHapticFeedback": "Включить тактильный отклик",
+  "settingsMaximizeOnStart": "Запускать в развёрнутом виде",
+  "settingsBrightnessSystem": "Системная",
+  "settingsBrightnessLight": "Светлая",
+  "settingsBrightnessDark": "Тёмная",
+  "settingsThemeDevice": "Устройство",
+  "settingsThemeOllama": "Ollama",
+  "settingsTemporaryFixes": "Временные исправления интерфейса",
+  "settingsTemporaryFixesDescription": "Включите временные исправления для проблем интерфейса.\nУдерживайте нажатие на отдельных параметрах, чтобы узнать больше.",
+  "settingsTemporaryFixesInstructions": "Не включайте ни одну из этих настроек, если не знаете, что делаете! Предложенные решения могут работать не так, как ожидается.\nИх нельзя считать окончательными, и оценивать их следует именно так. Возможны проблемы.",
+  "settingsTemporaryFixesNoFixes": "Нет доступных исправлений",
+  "settingsVoicePermissionLoading": "Загрузка разрешений голосового режима ...",
+  "settingsVoiceTtsNotSupported": "Синтез речи не поддерживается",
+  "settingsVoiceTtsNotSupportedDescription": "Сервисы синтеза речи не поддерживаются для выбранного языка. Выберите другой язык в панели выбора языка, чтобы снова включить их.\nДругие сервисы, такие как распознавание речи и «мышление» ИИ, будут работать как обычно, но взаимодействие может быть менее плавным.",
+  "settingsVoicePermissionNot": "Разрешения не предоставлены",
+  "settingsVoiceNotEnabled": "Голосовой режим не включён",
+  "settingsVoiceNotSupported": "Голосовой режим не поддерживается",
+  "settingsVoiceEnable": "Включить голосовой режим",
+  "settingsVoiceNoLanguage": "Язык не выбран",
+  "settingsVoiceLimitLanguage": "Ограничить выбранным языком",
+  "settingsVoicePunctuation": "Включить пунктуацию ИИ",
+  "settingsExportChats": "Экспортировать чаты",
+  "settingsExportChatsSuccess": "Чаты успешно экспортированы",
+  "settingsImportChats": "Импортировать чаты",
+  "settingsImportChatsTitle": "Импорт",
+  "settingsImportChatsDescription": "Следующий шаг импортирует чаты из выбранного файла. Это перезапишет все текущие чаты.\nВы хотите продолжить?",
+  "settingsImportChatsImport": "Импортировать и стереть",
+  "settingsImportChatsCancel": "Отмена",
+  "settingsImportChatsSuccess": "Чаты успешно импортированы",
+  "settingsExportInfo": "Эта опция позволяет экспортировать и импортировать историю чатов. Это может пригодиться, если вы хотите перенести историю чатов на другое устройство или создать её резервную копию",
+  "settingsExportWarning": "Несколько историй чатов не будут объединены! Если вы импортируете новую историю, вы потеряете текущую",
+  "settingsUpdateCheck": "Проверить обновления",
+  "settingsUpdateChecking": "Проверка обновлений ...",
+  "settingsUpdateLatest": "У вас последняя версия",
+  "settingsUpdateAvailable": "Доступно обновление (v{version})",
+  "settingsUpdateRateLimit": "Не удалось проверить: превышен лимит запросов API",
+  "settingsUpdateIssue": "Произошла ошибка",
+  "settingsUpdateDialogTitle": "Доступна новая версия",
+  "settingsUpdateDialogDescription": "Доступна новая версия Ollama. Скачать и установить её сейчас?",
+  "settingsUpdateChangeLog": "Журнал изменений",
+  "settingsUpdateDialogUpdate": "Обновить",
+  "settingsUpdateDialogCancel": "Отмена",
+  "settingsCheckForUpdates": "Проверять обновления при запуске",
+  "settingsGithub": "GitHub",
+  "settingsReportIssue": "Сообщить о проблеме",
+  "settingsLicenses": "Лицензии",
+  "settingsVersion": "Ollama App v{version}",
+  "settingsTitleAccessibility": "Доступность",
+  "@settingsTitleAccessibility": {
+    "description": "Title of the accessibility settings section",
+    "context": "Visible in the settings view"
+  },
+  "settingsDescriptionAccessibility": "Заявление о доступности, результаты тестов и способ сообщить о проблеме.",
+  "@settingsDescriptionAccessibility": {
+    "description": "Description of the accessibility settings section",
+    "context": "Visible in the settings view"
+  },
+  "accessibilityStatementTitle": "Заявление о доступности",
+  "@accessibilityStatementTitle": {
+    "description": "Title of the accessibility statement section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityCommitmentIntro": "Ollama должна быть удобна для людей с любыми возможностями, на каждом языке, который мы поддерживаем. Голосовое управление, программы чтения с экрана, навигация с клавиатуры и отображение в высоком контрасте — полноправные способы работы с этим приложением, а не второстепенные дополнения.",
+  "@accessibilityCommitmentIntro": {
+    "description": "Opening commitment text of the accessibility statement",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityCommitmentDetails": "На практике это означает: каждый интерактивный элемент управления имеет имя, которое озвучивает программа чтения с экрана (включая состояние голосового режима), кнопки сохраняют минимальную зону нажатия 48dp, фокус с клавиатуры следует визуальному порядку интерфейса, сообщения о состоянии озвучиваются при их изменении, а интерфейс остаётся удобным при крупном масштабе текста и в светлой, и в тёмной темах.",
+  "@accessibilityCommitmentDetails": {
+    "description": "Detailed commitment text of the accessibility statement",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityConformanceTitle": "Статус соответствия",
+  "@accessibilityConformanceTitle": {
+    "description": "Title of the conformance status section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityConformanceStatus": "Это приложение разработано с учётом требований Руководства по доступности веб-контента (WCAG) 2.2 Level AA. Соответствие не сертифицировано независимой третьей стороной; оно основано на нашем собственном автоматическом тестировании. Там, где это возможно, мы выходим за рамки AA и применяем меры уровня WCAG AAA, перечисленные ниже.",
+  "@accessibilityConformanceStatus": {
+    "description": "Conformance status text of the accessibility statement",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityAaaMeasuresTitle": "Превышение AA (меры AAA)",
+  "@accessibilityAaaMeasuresTitle": {
+    "description": "Title of the AAA measures section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityAaaMeasures": "Основной текст использует контраст 21:1 в обеих темах (AAA требует 7:1), приглушённый вторичный текст — 10:1 или выше, цвета состояний успеха и предупреждений соответствуют контрасту AAA в обеих темах, а текст ошибок в тёмной теме соответствует контрасту AAA. AAA дополнительно требует меры, непрактичные в чат-приложении такого размера (например, контраст 7:1 для абсолютно всего текста и ограничения по уровню чтения), поэтому мы гарантируем AA, а эти меры AAA считаем дополнительными улучшениями.",
+  "@accessibilityAaaMeasures": {
+    "description": "Text describing the applied AAA measures",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityAodaTitle": "Закон о доступности для онтарийцев с ограниченными возможностями (AODA)",
+  "@accessibilityAodaTitle": {
+    "description": "Title of the AODA section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityAodaText": "Закон Онтарио о доступности для онтарийцев с ограниченными возможностями (AODA) требует, чтобы цифровые продукты соответствовали WCAG 2.0/2.1 Level AA. Цель этого приложения — WCAG 2.2 Level AA — достигает этого базового уровня и превышает его. Отзывы о доступности приветствуются через форму обратной связи на этой странице, в соответствии с требованием AODA делать каналы обратной связи доступными.",
+  "@accessibilityAodaText": {
+    "description": "Text about AODA compliance",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityStandardsEuropeTitle": "Европейские стандарты (EN 301 549)",
+  "@accessibilityStandardsEuropeTitle": {
+    "description": "Title of the European standards section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityStandardsEuropeText": "В Европейском союзе гармонизированный стандарт EN 301 549 определяет требования к доступности ИКТ, установленные Европейским актом о доступности, который ссылается на WCAG 2.1 Level AA. Цель этого приложения — WCAG 2.2 Level AA — охватывает эти требования, поддерживая европейские обязательства по доступности, действующие с 28 июня 2025 г.",
+  "@accessibilityStandardsEuropeText": {
+    "description": "Text about the European standards (EN 301 549 / EAA)",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityStandardsUsTitle": "Стандарты США (ADA / Section 508)",
+  "@accessibilityStandardsUsTitle": {
+    "description": "Title of the United States standards section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityStandardsUsText": "В Соединённых Штатах Закон об американцах с ограниченными возможностями (ADA) является общим базовым стандартом запрета дискриминации, а Section 508 Закона о реабилитации требует соответствия WCAG 2.0 Level AA для федеральных технологий (Section 504 распространяет аналогичные обязательства на финансируемые программы). Цель этого приложения — WCAG 2.2 Level AA — достигает этих базовых уровней и превышает их.",
+  "@accessibilityStandardsUsText": {
+    "description": "Text about the US standards (ADA / Section 508 / Section 504)",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityKnownIssuesTitle": "Известные ограничения",
+  "@accessibilityKnownIssuesTitle": {
+    "description": "Title of the known limitations section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityKnownIssues": "Кнопки в заголовке окна настольной версии (свернуть, развернуть, закрыть) предоставляются интеграцией с операционной системой и недоступны в дереве программы чтения с экрана приложения. Библиотека чата отрисовывает небольшой объём собственного текста интерфейса, который может быть ещё не доступен на всех языках. В голосовом режиме текст ответа затухает у края экрана, а очень длинные строки чата могут обрезаться многоточием при значительном увеличении системного размера текста.",
+  "@accessibilityKnownIssues": {
+    "description": "Text describing the known accessibility limitations",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityLastValidated": "Автоматические проверки в последний раз выполнялись для Ollama App v{version}.",
+  "@accessibilityLastValidated": {
+    "description": "Text stating when the automated checks were last validated",
+    "context": "Visible on the accessibility page",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "description": "Version number of the app"
+      }
+    }
+  },
+  "accessibilityTestsTitle": "Результаты тестов",
+  "@accessibilityTestsTitle": {
+    "description": "Title of the test results section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestsIntro": "Следующие автоматические проверки доступности входят в набор тестов этого приложения и выполняются при каждом коммите:",
+  "@accessibilityTestsIntro": {
+    "description": "Intro text of the test results section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestsCheckColumn": "Проверка",
+  "@accessibilityTestsCheckColumn": {
+    "description": "Column header for the check name in the test results table",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestsStatusColumn": "Статус",
+  "@accessibilityTestsStatusColumn": {
+    "description": "Column header for the status in the test results table",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestsPass": "Пройдено",
+  "@accessibilityTestsPass": {
+    "description": "Status label of a passing accessibility check",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestsCiNote": "Полный набор (статический анализ и автоматические тесты) выполняется при каждом коммите в конвейере непрерывной интеграции.",
+  "@accessibilityTestsCiNote": {
+    "description": "Note about where the test suite runs",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityTestContrast": "Контраст текста соответствует уровням WCAG в светлой и тёмной темах",
+  "@accessibilityTestContrast": {
+    "description": "Name of the text contrast accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestLabeledTapTarget": "Нажимаемые цели имеют подписи для программ чтения с экрана",
+  "@accessibilityTestLabeledTapTarget": {
+    "description": "Name of the labeled tap target accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestAndroidTapTarget": "Цели касания не менее 48x48dp (рекомендация Android)",
+  "@accessibilityTestAndroidTapTarget": {
+    "description": "Name of the Android tap target size accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestIosTapTarget": "Цели касания не менее 44x44dp (рекомендация iOS)",
+  "@accessibilityTestIosTapTarget": {
+    "description": "Name of the iOS tap target size accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestSemanticsPresent": "Подписи для программ чтения с экрана существуют для всех пользовательских элементов управления",
+  "@accessibilityTestSemanticsPresent": {
+    "description": "Name of the semantics presence accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestTraversalOrder": "Порядок фокуса с клавиатуры следует визуальному порядку",
+  "@accessibilityTestTraversalOrder": {
+    "description": "Name of the focus traversal order accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestLocalesRender": "Все языки интерфейса отрисовываются без ошибок",
+  "@accessibilityTestLocalesRender": {
+    "description": "Name of the per-locale rendering accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityTestFormValidation": "Поля формы озвучивают ошибки валидации",
+  "@accessibilityTestFormValidation": {
+    "description": "Name of the form validation announcement accessibility check",
+    "context": "Visible in the test results table"
+  },
+  "accessibilityContactTitle": "Сообщить о проблеме доступности",
+  "@accessibilityContactTitle": {
+    "description": "Title of the contact form section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityContactIntro": "Используйте эту форму, чтобы запросить информацию о доступности, попросить решить проблему или сообщить о барьере доступности. Ваше сообщение будет сформировано в виде текста, который можно отправить как публичный issue в GitHub-репозитории этого проекта.",
+  "@accessibilityContactIntro": {
+    "description": "Intro text of the contact form section",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormName": "Имя (необязательно)",
+  "@accessibilityFormName": {
+    "description": "Label of the optional name field in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormEmail": "Электронная почта (необязательно)",
+  "@accessibilityFormEmail": {
+    "description": "Label of the optional email field in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormAssistiveTech": "Используемая ассистивная технология (необязательно)",
+  "@accessibilityFormAssistiveTech": {
+    "description": "Label of the optional assistive technology field in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormDescription": "Опишите проблему (обязательно)",
+  "@accessibilityFormDescription": {
+    "description": "Label of the required description field in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormDescriptionHint": "Что вы пытались сделать и что вам помешало?",
+  "@accessibilityFormDescriptionHint": {
+    "description": "Hint of the description field in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormErrorDescription": "Опишите проблему перед отправкой.",
+  "@accessibilityFormErrorDescription": {
+    "description": "Validation error for an empty description in the accessibility contact form",
+    "context": "Visible in the accessibility contact form"
+  },
+  "accessibilityFormErrorEmail": "Введите корректный адрес электронной почты или оставьте поле пустым.",
+  "@accessibilityFormErrorEmail": {
+    "description": "Validation error for an invalid email in the accessibility contact form",
+    "context": "Visible in the accessibility contact form"
+  },
+  "accessibilityFormSendGithub": "Открыть issue на GitHub",
+  "@accessibilityFormSendGithub": {
+    "description": "Label of the open-a-GitHub-issue button in the accessibility contact form",
+    "context": "Visible on the accessibility page"
+  },
+  "accessibilityFormEmailSubject": "Отчёт о доступности (Ollama App)",
+  "@accessibilityFormEmailSubject": {
+    "description": "Subject line used for the composed accessibility report",
+    "context": "Used when composing the email or GitHub issue"
+  },
+  "accessibilityFormCopiedFallback": "Не удалось открыть ссылку. Отчёт скопирован в буфер обмена.",
+  "@accessibilityFormCopiedFallback": {
+    "description": "Snackbar shown when the report link cannot be opened and the report was copied instead",
+    "context": "Visible in the accessibility contact form"
+  },
+  "tooltipResetChat": "Сбросить текущий чат",
+  "@tooltipResetChat": {
+    "description": "Tooltip for the reset chat button",
+    "context": "Used for screen readers"
+  },
+  "tooltipVoiceClose": "Закрыть голосовой режим",
+  "@tooltipVoiceClose": {
+    "description": "Tooltip for the close button in voice mode",
+    "context": "Used for screen readers"
+  },
+  "tooltipVoiceSettings": "Открыть настройки голоса",
+  "@tooltipVoiceSettings": {
+    "description": "Tooltip for the settings button in voice mode",
+    "context": "Used for screen readers"
+  },
+  "tooltipVoiceScrollToEnd": "Прокрутить к последнему тексту",
+  "@tooltipVoiceScrollToEnd": {
+    "description": "Tooltip for the scroll-to-end button in voice mode",
+    "context": "Used for screen readers"
+  },
+  "tooltipWelcomeNext": "Следующая страница",
+  "@tooltipWelcomeNext": {
+    "description": "Tooltip for the next button on the welcome screen",
+    "context": "Used for screen readers"
+  },
+  "tooltipWelcomeFinish": "Начать использовать Ollama",
+  "@tooltipWelcomeFinish": {
+    "description": "Tooltip for the finish button on the welcome screen",
+    "context": "Used for screen readers"
+  },
+  "accessibilityVoiceOrbListening": "Голосовой режим слушает. Нажмите, чтобы остановить прослушивание.",
+  "@accessibilityVoiceOrbListening": {
+    "description": "Screen-reader label for the voice orb while listening",
+    "context": "Used for screen readers"
+  },
+  "accessibilityVoiceOrbSpeaking": "Ответ зачитывается вслух. Нажмите, чтобы остановить.",
+  "@accessibilityVoiceOrbSpeaking": {
+    "description": "Screen-reader label for the voice orb while speaking",
+    "context": "Used for screen readers"
+  },
+  "accessibilityVoiceOrbThinking": "ИИ готовит ответ. Нажмите, чтобы отменить.",
+  "@accessibilityVoiceOrbThinking": {
+    "description": "Screen-reader label for the voice orb while the AI is thinking",
+    "context": "Used for screen readers"
+  },
+  "accessibilityAppLogo": "Ollama",
+  "@accessibilityAppLogo": {
+    "description": "Screen-reader label for the app logo",
+    "context": "Used for screen readers"
+  },
+  "accessibilityWelcomePage1": "Добро пожаловать в Ollama. Это обучение показывает три коротких изображения.",
+  "@accessibilityWelcomePage1": {
+    "description": "Screen-reader description of the first welcome page image",
+    "context": "Used for screen readers"
+  },
+  "accessibilityWelcomePage2": "Страница онбординга 2 из 3. На изображении показано, как выбрать модель и начать чат.",
+  "@accessibilityWelcomePage2": {
+    "description": "Screen-reader description of the second welcome page image",
+    "context": "Used for screen readers"
+  },
+  "accessibilityWelcomePage3": "Страница онбординга 3 из 3. На изображении показано, где найти настройки и голосовой режим.",
+  "@accessibilityWelcomePage3": {
+    "description": "Screen-reader description of the third welcome page image",
+    "context": "Used for screen readers"
+  },
+  "accessibilitySummaryConformance": "Цель этого приложения — WCAG 2.2 Level AA, также применяются улучшения уровня AAA. Некоторые функции имеют ограничения, описанные внутри каждого раздела.",
+  "@accessibilitySummaryConformance": {
+    "description": "Short always-visible conformance summary at the top of the accessibility page",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySectionStatementSummary": "Наше обязательство, статус соответствия и меры, которые мы применяем сверх AA.",
+  "@accessibilitySectionStatementSummary": {
+    "description": "One-line summary under the collapsed statement section",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySectionTestsSummary": "8 автоматических проверок доступности проходят при каждой сборке.",
+  "@accessibilitySectionTestsSummary": {
+    "description": "One-line summary under the collapsed test results section",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySectionStandardsSummary": "Как мы поддерживаем AODA, европейский стандарт EN 301 549 и ADA / Section 508 США.",
+  "@accessibilitySectionStandardsSummary": {
+    "description": "One-line summary under the collapsed standards section",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySectionContactSummary": "Сообщите о проблеме доступности на GitHub. Мы отвечаем на все обращения.",
+  "@accessibilitySectionContactSummary": {
+    "description": "One-line summary under the collapsed contact section",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySupportLevelLimited": "Ограниченная поддержка",
+  "@accessibilitySupportLevelLimited": {
+    "description": "Support level label: partially meets the standard",
+    "context": "Used for screen readers and display"
+  },
+  "accessibilitySupportLevelCompliantWithLimitations": "Соответствует с ограничениями",
+  "@accessibilitySupportLevelCompliantWithLimitations": {
+    "description": "Support level label: meets the standard with documented limitations",
+    "context": "Used for screen readers and display"
+  }
+}
