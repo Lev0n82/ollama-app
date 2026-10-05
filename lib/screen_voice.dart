@@ -163,8 +163,11 @@ class _ScreenVoiceState extends State<ScreenVoice> {
         }
       }
     },
+        // ignore: use_build_context_synchronously
         addToSystem: (prefs!.getBool("voiceLimitLanguage") ?? true)
-            ? "You must write in the following language: ${prefs!.getString("voiceLanguage") ?? "en_US"}!"
+            ? AppLocalizations.of(context)!
+                .voiceLanguageInstruction(
+                    prefs!.getString("voiceLanguage") ?? "en_US")
             : null);
   }
 
@@ -231,11 +234,12 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                     scrolledUnderElevation: 0.0,
                     leading: IconButton(
                         enableFeedback: false,
+                        tooltip: AppLocalizations.of(context)!.tooltipVoiceClose,
                         onPressed: () {
                           Navigator.of(context).pop();
                         },
-                        icon: const Icon(Icons.close_rounded,
-                            color: Colors.grey)),
+                        icon: Icon(Icons.close_rounded,
+                            color: accessibleMuted(context))),
                     title: Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
@@ -254,6 +258,8 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                     actions: [
                       IconButton(
                           enableFeedback: false,
+                          tooltip:
+                              AppLocalizations.of(context)!.tooltipVoiceSettings,
                           onPressed: () {
                             speaking = false;
                             settingsOpen = false;
@@ -263,9 +269,9 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                                     builder: (context) =>
                                         const ScreenSettingsVoice()));
                           },
-                          icon: const Icon(
+                          icon: Icon(
                             Icons.settings_rounded,
-                            color: Colors.grey,
+                            color: accessibleMuted(context),
                           ))
                     ]),
                 body: SafeArea(
@@ -276,12 +282,14 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                             child: Padding(
                           padding: const EdgeInsets.only(left: 16, right: 16),
                           child: Center(
-                              child: Text(text,
-                                  textAlign: TextAlign.center,
-                                  overflow: TextOverflow.fade,
-                                  style: const TextStyle(
-                                      color: Colors.grey,
-                                      fontFamily: "monospace"))),
+                              child: Semantics(
+                                  liveRegion: true,
+                                  child: Text(text,
+                                      textAlign: TextAlign.center,
+                                      overflow: TextOverflow.fade,
+                                      style: TextStyle(
+                                          color: accessibleMuted(context),
+                                          fontFamily: "monospace")))),
                         ))
                       ]),
                     ),
@@ -309,7 +317,28 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                                             ? const Duration(seconds: 1)
                                             : const Duration(milliseconds: 200),
                                         curve: Curves.easeInOut,
-                                        child: InkWell(
+                                        child: Semantics(
+                                            label: aiThinking
+                                                ? AppLocalizations.of(context)!
+                                                    .accessibilityVoiceOrbThinking
+                                                : (speaking && sttDone)
+                                                    ? AppLocalizations.of(
+                                                            context)!
+                                                        .accessibilityVoiceOrbSpeaking
+                                                    : AppLocalizations.of(
+                                                            context)!
+                                                        .accessibilityVoiceOrbListening,
+                                            button: true,
+                                            onTap: () {
+                                              if (speaking && !aiThinking) {
+                                                intendedStop = true;
+                                                speaking = false;
+                                                voice.stop();
+                                                return;
+                                              }
+                                              process();
+                                            },
+                                            child: InkWell(
                                             borderRadius:
                                                 BorderRadius.circular(48),
                                             onTap: () {
@@ -350,7 +379,7 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                                                                         .colorScheme
                                                                         .secondary,
                                                                     key: const ValueKey("stt"))
-                                                        : null)))),
+                                                        : null))))),
                                   );
                                 }))),
                     Expanded(
@@ -388,9 +417,12 @@ class _ScreenVoiceState extends State<ScreenVoice> {
                                 right: 0,
                                 bottom: 0,
                                 child: IconButton(
-                                    icon: const Icon(
+                                    tooltip:
+                                        AppLocalizations.of(context)!
+                                            .tooltipVoiceScrollToEnd,
+                                    icon: Icon(
                                         Icons.arrow_downward_rounded,
-                                        color: Colors.grey),
+                                        color: accessibleMuted(context)),
                                     onPressed: () {
                                       scrollController.animateTo(
                                           scrollController
